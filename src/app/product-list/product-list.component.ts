@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, products } from '../model/product';
 import { CartService } from '../service/cart.service';
+// import { toast, snackbar } from 'tailwind-toast';
 
 @Component({
   selector: 'app-product-list',
@@ -18,6 +19,8 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // toast().default('Hey you pressed it!', 'Why !').for(1000).show();
+
   share() {
     window.alert('The product has been shared!');
   }
@@ -28,6 +31,11 @@ export class ProductListComponent implements OnInit {
   addToCart(product: Product) {
     this.cartService.addToCart(product);
     window.alert('Your product has been added to the cart!');
+  }
+  toast() {
+    const { toast, snackbarhi } = require('tailwind-toast')
+
+    toast().default('Hey you pressed it!', 'Why !').for(1000).show()
   }
 
 }
