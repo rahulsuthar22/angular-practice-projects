@@ -1,0 +1,184 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>form</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">form</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+
+
+  <!-- DUTY TYPE -->
+  <ion-content>
+    <ion-card>
+      <ion-card-title>
+        <ion-item lines="none">
+          <ion-label class="ion-text-center font-bold" color="primary">
+            Duty Type
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-segment mode="md">
+            <ion-segment-button>
+              <ion-label>In City</ion-label>
+              <ion-icon name="car"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button>
+              <ion-label>
+                Outstation
+              </ion-label>
+              <ion-icon name="airplane"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+
+    <!-- TRAVEL TYPE -->
+    <ion-card>
+      <ion-card-title>
+        <ion-item lines="none">
+          <ion-label class="ion-text-center font-bold" color="primary">
+            Travel Type
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-segment mode="md">
+            <ion-segment-button>
+              <label class="text-[10px] mb-2">One Way Trip</label>
+              <ion-icon name="bicycle"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button>
+              <label class="text-[10px] mb-2">
+                Round Trip
+              </label>
+              <ion-icon name="refresh-circle"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button>
+              <label class="text-[10px] mb-2">
+                Stay
+              </label>
+              <ion-icon name="bus"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- CAR -->
+    <ion-card>
+      <ion-card-title>
+        <ion-item lines="none">
+          <ion-label class="ion-text-center font-bold" color="primary">
+            Car
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-segment mode="md" (ionChange)="setCar($event)">
+            <ion-segment-button value="Automatic">
+              <label class="text-[10px] mb-2">Automatic</label>
+              <ion-icon name="car"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="Manual">
+              <label class="text-[10px] mb-2">
+                Manual
+              </label>
+              <ion-icon name="help-buoy"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="Luxury">
+              <label class="text-[10px] mb-2">
+                Luxury
+              </label>
+              <ion-icon name="globe"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-item>
+
+        <!-- CAR TYPE -->
+        <ion-card>
+          <ion-card-title *ngIf="car !== undefined">
+            <ion-item lines="none">
+              <ion-label class="ion-text-center font-bold" color="primary">
+                Car Type
+              </ion-label>
+            </ion-item>
+          </ion-card-title>
+          <ion-item *ngIf="car === 'Automatic'">
+            <ion-segment mode="md">
+              <ion-segment-button>
+                <label class="text-[10px] mb-2">A Suv</label>
+                <ion-icon name="car"></ion-icon>
+              </ion-segment-button>
+              <ion-segment-button>
+                <label class="text-[10px] mb-2">
+                  A Sedan
+                </label>
+                <ion-icon name="help-buoy"></ion-icon>
+              </ion-segment-button>
+              <ion-segment-button>
+                <label class="text-[10px] mb-2">
+                  A Hatchback
+                </label>
+                <ion-icon name="globe"></ion-icon>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-item>
+          <ion-item *ngIf="car === 'Manual'">
+            <ion-segment mode="md">
+              <ion-segment-button>
+                <label class="text-[10px] mb-2">M Suv</label>
+                <ion-icon name="car"></ion-icon>
+              </ion-segment-button>
+              <ion-segment-button>
+                <label class="text-[10px] mb-2">
+                  M Sedan
+                </label>
+                <ion-icon name="help-buoy"></ion-icon>
+              </ion-segment-button>
+              <ion-segment-button>
+                <label class="text-[10px] mb-2">
+                  M Hatchback
+                </label>
+                <ion-icon name="globe"></ion-icon>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-item>
+          <ion-item *ngIf="car === 'Luxury'">
+            <ion-segment mode="md">
+              <ion-segment-button>
+                <label class="text-[10px] mb-2">L Suv</label>
+                <ion-icon name="car"></ion-icon>
+              </ion-segment-button>
+              <ion-segment-button>
+                <label class="text-[10px] mb-2">
+                  L Sedan
+                </label>
+                <ion-icon name="help-buoy"></ion-icon>
+              </ion-segment-button>
+              <ion-segment-button>
+                <label class="text-[10px] mb-2">
+                  L Hatchback
+                </label>
+                <ion-icon name="globe"></ion-icon>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-item>
+        </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>

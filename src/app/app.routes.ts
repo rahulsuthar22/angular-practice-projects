@@ -10,4 +10,8 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'form',
+    loadComponent: () => import('./form/form.page').then(m => m.FormPage)
+  },
 ];
